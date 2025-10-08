@@ -281,3 +281,30 @@ input[type=number] {
     margin-bottom: 30px;
     letter-spacing: 2px;
 }
+
+/* --- Mode Switcher --- */
+.mode-switcher {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.mode-btn {
+    background-color: transparent;
+    border: none;
+    color: #aaa;
+    padding: 8px 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 6px;
+}
+
+.mode-btn.active {
+    background-color: #007BFF;
+    color: white;
+}
