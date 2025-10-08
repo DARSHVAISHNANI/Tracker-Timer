@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <a href="timetable.html">Planner</a>
+            <a href="index.html">Timer</a>
+            <a href="analysis.html">Analysis</a>
+            <a href="monthly.html" class="active">Monthly</a>
+        </nav>
+
+        <div class="monthly-container">
+            <div class="header-container">
+                <h2>Monthly Report</h2>
+            </div>
+
+            <div class="date-selector-form">
+                <input type="month" id="month-picker">
+                <button id="load-report-btn">Load Report</button>
+            </div>
+
+            <h3>Monthly Summary Chart</h3>
+            <div class="chart-container" style="max-width: 600px;">
+                <canvas id="monthly-bar-chart"></canvas>
+            </div>
+
+            <h3>Weekly Breakdown</h3>
+            <div id="weekly-table-container">
+                </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="monthly.js"></script>
+</body>
+</html>

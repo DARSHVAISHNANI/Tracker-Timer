@@ -1,0 +1,283 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.main-container {
+    width: 90%;
+    max-width: 700px;
+}
+
+/* --- Navigation --- */
+nav {
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+nav a {
+    color: #aaa;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
+nav a.active {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* --- Planner Page --- */
+.planner-container, .timer-container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.chart-container {
+    position: relative;
+    width: 70%;
+    max-width: 350px;
+    margin: 20px auto;
+}
+.add-plan-form {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+.add-plan-form input {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    flex: 1;
+}
+.add-plan-form button {
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+}
+#planned-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+#planned-list li {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+}
+
+/* --- Timer Page --- */
+#time-display { font-size: 4.5rem; font-weight: 300; margin-bottom: 30px; letter-spacing: 2px; }
+.button-container button { font-size: 1.2rem; padding: 12px 30px; margin: 0 10px; border: none; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+#startStopBtn { background-color: #4CAF50; color: white; }
+#resetBtn { background-color: #f44336; color: white; }
+button:disabled { background-color: #555 !important; cursor: not-allowed; opacity: 0.6; }
+#category-selector { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; flex-wrap: wrap; }
+.category-btn { background-color: #333; color: #fff; border: 2px solid #555; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 1rem; transition: all 0.3s ease; }
+.category-btn.active { background-color: #007BFF; border-color: #0056b3; }
+#current-category-display { font-weight: 400; color: #aaa; margin-top: 0; margin-bottom: 15px; font-size: 1.5rem; }
+
+#time-tracking-info {
+    color: #aaa;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+#time-tracking-info strong {
+    color: #fff;
+}
+
+
+/* --- Add these new styles --- */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header-container h2 {
+    margin: 0;
+    color: #fff;
+}
+
+#current-day-display {
+    color: #aaa;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.date-selector-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#date-picker-input {
+    flex-grow: 1;
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    font-family: inherit; /* Ensures consistent font */
+}
+
+#load-day-btn {
+    border: none;
+    background-color: #673ab7;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
+}
+
+#load-day-btn:hover {
+    background-color: #512da8;
+}
+
+/* Modify the existing li style to use flexbox for better alignment */
+#planned-list li {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: flex; /* CHANGED */
+    justify-content: space-between; /* CHANGED */
+    align-items: center; /* NEW */
+    font-size: 1.1rem;
+}
+
+/* NEW style for the delete button */
+.delete-btn {
+    background-color: #f44336; /* Red color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Makes it a circle */
+    width: 25px;
+    height: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    line-height: 25px; /* Centers the 'X' vertically */
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+.monthly-container {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#weekly-table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* For smaller screens */
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.report-table th, .report-table td {
+    padding: 12px 15px;
+    border: 1px solid #333;
+}
+
+.report-table th {
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+}
+
+.report-table td {
+    background-color: #2a2a2a;
+}
+
+.report-table .category-name {
+    font-weight: bold;
+}
+
+.duration-setter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.duration-setter input {
+    width: 100px;
+    font-size: 3.5rem;
+    font-weight: 300;
+    text-align: center;
+    background-color: #121212;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.duration-setter span {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #555;
+    transform: translateY(-4px);
+}
+
+/* Hide the default number input spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+#time-display {
+    font-size: 6rem; /* Made the timer a bit larger */
+    font-weight: 300;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}

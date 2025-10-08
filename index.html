@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sleek Timer</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <script src="https://cdn.jsdelivr.net/npm/idb@7/build/umd.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <nav>
+        <a href="timetable.html">Planner</a>
+        <a href="index.html" class="active">Timer</a>
+        <a href="analysis.html">Analysis</a>
+        <a href="monthly.html">Monthly</a>
+      </nav>
+
+      <div class="timer-container">
+        <div class="header-container">
+          <h2>Time Tracker</h2>
+          <h2 id="current-day-display">Loading...</h2>
+        </div>
+
+        <div id="category-selector"></div>
+
+        <h2 id="current-category-display">Select a Category to Start</h2>
+
+        <div id="time-tracking-info">
+          <span>--</span>
+        </div>
+
+        <div class="duration-setter">
+          <input type="number" id="minutes-input" min="0" max="99" value="25" />
+          <span>:</span>
+          <input type="number" id="seconds-input" min="0" max="59" value="00" />
+        </div>
+
+        <div id="time-display">25:00</div>
+
+        <div class="button-container">
+          <button id="startStopBtn" disabled>Start</button>
+          <button id="resetBtn" disabled>Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="timer.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("ServiceWorker registration successful!");
+            })
+            .catch((err) => {
+              console.log("ServiceWorker registration failed: ", err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

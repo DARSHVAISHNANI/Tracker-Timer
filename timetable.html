@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Timetable</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <a href="timetable.html" class="active">Planner</a>
+            <a href="index.html">Timer</a>
+            <a href="analysis.html">Analysis</a>
+        </nav>
+
+        <div class="planner-container">
+            <div class="header-container">
+                <h2>Today's Plan</h2>
+                <h2 id="current-day-display">Loading...</h2>
+            </div>
+
+            <div class="date-selector-form">
+                <input type="date" id="date-picker-input">
+                <button id="load-day-btn">Load Day</button>
+            </div>
+            
+            <p>Total time available today: <b id="total-hours-display">8 hours</b></p>
+            
+            <div class="chart-container">
+                <canvas id="plan-pie-chart"></canvas>
+            </div>
+
+            <h3>Add to your Plan</h3>
+            <div class="add-plan-form">
+                <input type="text" id="new-category-name" placeholder="Category (e.g., Study)">
+                <input type="number" id="new-category-target" placeholder="Target (hours)">
+                <button id="add-plan-btn">Add Category</button>
+            </div>
+
+            <h3>Planned Activities</h3>
+            <ul id="planned-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="timetable.js"></script>
+</body>
+</html>

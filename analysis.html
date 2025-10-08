@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Analysis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <a href="timetable.html">Planner</a>
+            <a href="index.html">Timer</a>
+            <a href="analysis.html" class="active">Analysis</a>
+            <a href="monthly.html">Monthly</a>
+        </nav>
+
+        <div class="planner-container">
+            <div class="header-container">
+                <h2>Progress Overview</h2>
+                <h2 id="current-day-display">Loading...</h2>
+            </div>
+            
+            <p id="analysis-summary">Calculating your progress...</p>
+            
+            <div class="chart-container">
+                <canvas id="progress-pie-chart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="analysis.js"></script>
+</body>
+</html>
