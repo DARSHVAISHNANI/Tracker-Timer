@@ -67,7 +67,7 @@ async function saveTimeToDatabase(category, duration, date) {
     const target = categoryData ? categoryData.target : 0; // Default to 0 if not found
 
     try {
-        await fetch('http://localhost:8000/save-time', { // Ensure port is correct
+        await fetch('http://api/save-time', { // Ensure port is correct
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ category, duration, day: date, target }), // NEW: target is added
