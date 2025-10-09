@@ -105,6 +105,7 @@ button:disabled { background-color: #555 !important; cursor: not-allowed; opacit
 .category-btn.active { background-color: #007BFF; border-color: #0056b3; }
 #current-category-display { font-weight: 400; color: #aaa; margin-top: 0; margin-bottom: 15px; font-size: 1.5rem; }
 
+/* --- Add this to your style.css --- */
 #time-tracking-info {
     color: #aaa;
     margin-bottom: 15px;
@@ -115,6 +116,24 @@ button:disabled { background-color: #555 !important; cursor: not-allowed; opacit
     color: #fff;
 }
 
+/* Add this to style.css */
+#next-day-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #673ab7; /* A distinct purple color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+#next-day-btn:hover {
+    background-color: #512da8;
+}
 
 /* --- Add these new styles --- */
 .header-container {
@@ -167,6 +186,12 @@ button:disabled { background-color: #555 !important; cursor: not-allowed; opacit
     background-color: #512da8;
 }
 
+/* --- REMOVE this old style --- */
+/* #next-day-btn { ... } 
+*/
+
+/* --- Add these styles to style.css --- */
+
 /* Modify the existing li style to use flexbox for better alignment */
 #planned-list li {
     background-color: #2a2a2a;
@@ -198,6 +223,8 @@ button:disabled { background-color: #555 !important; cursor: not-allowed; opacit
 .delete-btn:hover {
     background-color: #e53935;
 }
+
+/* --- Add these styles for the Monthly Report page --- */
 
 .monthly-container {
     background-color: #1e1e1e;
@@ -235,76 +262,4 @@ button:disabled { background-color: #555 !important; cursor: not-allowed; opacit
 
 .report-table .category-name {
     font-weight: bold;
-}
-
-.duration-setter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 15px;
-}
-
-.duration-setter input {
-    width: 100px;
-    font-size: 3.5rem;
-    font-weight: 300;
-    text-align: center;
-    background-color: #121212;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.duration-setter span {
-    font-size: 3rem;
-    font-weight: 300;
-    color: #555;
-    transform: translateY(-4px);
-}
-
-/* Hide the default number input spinners */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance: textfield;
-}
-
-#time-display {
-    font-size: 6rem; /* Made the timer a bit larger */
-    font-weight: 300;
-    margin-bottom: 30px;
-    letter-spacing: 2px;
-}
-
-/* --- Mode Switcher --- */
-.mode-switcher {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    background-color: #333;
-    border-radius: 8px;
-    padding: 5px;
-}
-
-.mode-btn {
-    background-color: transparent;
-    border: none;
-    color: #aaa;
-    padding: 8px 16px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 6px;
-}
-
-.mode-btn.active {
-    background-color: #007BFF;
-    color: white;
 }
