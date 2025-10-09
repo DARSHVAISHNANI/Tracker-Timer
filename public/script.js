@@ -13,7 +13,9 @@ const endTimeInput = document.getElementById('end-time-input');
 const scheduleCategorySelect = document.getElementById('schedule-category-select');
 const addScheduleBtn = document.getElementById('add-schedule-btn');
 const scheduleDisplay = document.getElementById('schedule-display');
+import { injectSpeedInsights } from '@vercel/speed-insights';
 
+injectSpeedInsights();
 // --- State Management ---
 let categories = [];
 let schedule = []; // NEW: Array to hold schedule items
